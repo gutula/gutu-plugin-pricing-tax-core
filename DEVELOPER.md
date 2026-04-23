@@ -54,6 +54,11 @@ Maintains shared pricing, discount, tax, and commercial-policy rules so order, b
 | Field | Value |
 | --- | --- |
 | Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `party-relationships-core`, `product-catalog-core` |
+| Recommended Plugins | `sales-core`, `procurement-core`, `accounting-core` |
+| Capability Enhancing | `pos-core`, `subscriptions-core`, `e-invoicing-core` |
+| Integration Only | `business-portals-core` |
+| Suggested Packs | `localization-global-base`, `localization-india`, `localization-united-states` |
+| Standalone Supported | Yes |
 | Requested Capabilities | `ui.register.admin`, `api.rest.mount`, `data.write.pricing`, `events.publish.pricing` |
 | Provides Capabilities | `pricing.price-lists`, `pricing.tax-rules`, `pricing.commercial-policies` |
 | Owns Data | `pricing.price-lists`, `pricing.tax-rules`, `pricing.commercial-policies`, `pricing.payment-terms` |

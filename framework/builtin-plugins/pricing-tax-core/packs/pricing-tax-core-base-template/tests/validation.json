@@ -1,6 +1,33 @@
 {
   "packageId": "pricing-tax-core",
   "packName": "pricing-tax-core-base-template",
+  "requiredPlugins": [
+    "auth-core",
+    "org-tenant-core",
+    "role-policy-core",
+    "audit-core",
+    "workflow-core",
+    "party-relationships-core",
+    "product-catalog-core"
+  ],
+  "recommendedPlugins": [
+    "sales-core",
+    "procurement-core",
+    "accounting-core"
+  ],
+  "capabilityEnhancingPlugins": [
+    "pos-core",
+    "subscriptions-core",
+    "e-invoicing-core"
+  ],
+  "integrationOnlyPlugins": [
+    "business-portals-core"
+  ],
+  "suggestedPacks": [
+    "localization-global-base",
+    "localization-india",
+    "localization-united-states"
+  ],
   "expectedActions": [
     "pricing.price-lists.publish",
     "pricing.tax-rules.publish",

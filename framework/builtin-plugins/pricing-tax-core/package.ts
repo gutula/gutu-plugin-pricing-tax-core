@@ -60,9 +60,70 @@ export default definePackage({
       "packageId": "product-catalog-core",
       "class": "required",
       "rationale": "Required for Pricing & Tax Core to keep its boundary governed and explicit."
+    },
+    {
+      "packageId": "sales-core",
+      "class": "optional",
+      "rationale": "Recommended with Pricing & Tax Core for smoother production adoption and operator experience."
+    },
+    {
+      "packageId": "procurement-core",
+      "class": "optional",
+      "rationale": "Recommended with Pricing & Tax Core for smoother production adoption and operator experience."
+    },
+    {
+      "packageId": "accounting-core",
+      "class": "optional",
+      "rationale": "Recommended with Pricing & Tax Core for smoother production adoption and operator experience."
+    },
+    {
+      "packageId": "pos-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Pricing & Tax Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "subscriptions-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Pricing & Tax Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "e-invoicing-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Pricing & Tax Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "business-portals-core",
+      "class": "integration-only",
+      "rationale": "Only needed when Pricing & Tax Core must exchange data or actions with adjacent or external surfaces."
     }
   ],
-  "optionalWith": [],
+  "recommendedPlugins": [
+    "sales-core",
+    "procurement-core",
+    "accounting-core"
+  ],
+  "capabilityEnhancingPlugins": [
+    "pos-core",
+    "subscriptions-core",
+    "e-invoicing-core"
+  ],
+  "integrationOnlyPlugins": [
+    "business-portals-core"
+  ],
+  "suggestedPacks": [
+    "localization-global-base",
+    "localization-india",
+    "localization-united-states"
+  ],
+  "standaloneSupported": true,
+  "installNotes": [
+    "Install with Accounting for production-grade statutory and settlement behavior."
+  ],
+  "optionalWith": [
+    "sales-core",
+    "procurement-core",
+    "accounting-core"
+  ],
   "conflictsWith": [],
   "providesCapabilities": [
     "pricing.price-lists",

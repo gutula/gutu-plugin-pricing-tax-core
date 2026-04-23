@@ -61,11 +61,26 @@ This tier is justified because unit coverage exists, contract coverage exists, i
 | Manifest ID | `pricing-tax-core` |
 | Repo | [gutu-plugin-pricing-tax-core](https://github.com/gutula/gutu-plugin-pricing-tax-core) |
 | Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `party-relationships-core`, `product-catalog-core` |
+| Recommended Plugins | `sales-core`, `procurement-core`, `accounting-core` |
+| Capability Enhancing | `pos-core`, `subscriptions-core`, `e-invoicing-core` |
+| Integration Only | `business-portals-core` |
+| Suggested Packs | `localization-global-base`, `localization-india`, `localization-united-states` |
+| Standalone Supported | Yes |
 | Requested Capabilities | `ui.register.admin`, `api.rest.mount`, `data.write.pricing`, `events.publish.pricing` |
 | Provided Capabilities | `pricing.price-lists`, `pricing.tax-rules`, `pricing.commercial-policies` |
 | Runtime | bun>=1.3.12 |
 | Database | postgres, sqlite |
 | Integration Model | Actions+Resources+Jobs+Workflows+UI |
+
+## Installation Guidance
+
+- Required plugins: `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `party-relationships-core`, `product-catalog-core`
+- Recommended plugins: `sales-core`, `procurement-core`, `accounting-core`
+- Capability-enhancing plugins: `pos-core`, `subscriptions-core`, `e-invoicing-core`
+- Integration-only plugins: `business-portals-core`
+- Suggested packs: `localization-global-base`, `localization-india`, `localization-united-states`
+- Standalone supported: yes
+- Install with Accounting for production-grade statutory and settlement behavior.
 
 ## Capability Matrix
 
