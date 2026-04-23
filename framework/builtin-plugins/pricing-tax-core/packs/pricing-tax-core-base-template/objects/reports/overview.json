@@ -1,0 +1,19 @@
+{
+  "pluginId": "pricing-tax-core",
+  "reports": [
+    "Item Price Register",
+    "Pricing Rule Summary",
+    "Tax Rule Coverage",
+    "Payment Terms Adoption"
+  ],
+  "exceptionQueues": [
+    "pricing-override-review",
+    "tax-rule-conflicts",
+    "currency-rounding-exceptions"
+  ],
+  "operationalScenarios": [
+    "price-list-publication",
+    "quote-pricing-evaluation",
+    "tax-determination-and-withholding"
+  ]
+}

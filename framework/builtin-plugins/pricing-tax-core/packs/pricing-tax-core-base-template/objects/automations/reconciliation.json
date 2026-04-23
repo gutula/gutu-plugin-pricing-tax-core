@@ -1,0 +1,10 @@
+{
+  "automationId": "pricing-tax-core.reconciliation.default",
+  "trigger": "exception-record-opened",
+  "action": "pricing.reconciliation.run",
+  "queues": [
+    "pricing-override-review",
+    "tax-rule-conflicts",
+    "currency-rounding-exceptions"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "workflowId": "pricing-policy-lifecycle",
+  "actors": [
+    "pricing-analyst",
+    "finance",
+    "approver"
+  ],
+  "description": "Draft, approve, publish, supersede, and retire pricing and tax policy changes."
+}

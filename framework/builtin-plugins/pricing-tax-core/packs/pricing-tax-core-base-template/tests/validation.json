@@ -1,0 +1,25 @@
+{
+  "packageId": "pricing-tax-core",
+  "packName": "pricing-tax-core-base-template",
+  "expectedActions": [
+    "pricing.price-lists.publish",
+    "pricing.tax-rules.publish",
+    "pricing.policies.evaluate"
+  ],
+  "expectedResources": [
+    "pricing.price-lists",
+    "pricing.tax-rules",
+    "pricing.commercial-policies"
+  ],
+  "expectedReports": [
+    "Item Price Register",
+    "Pricing Rule Summary",
+    "Tax Rule Coverage",
+    "Payment Terms Adoption"
+  ],
+  "expectedExceptionQueues": [
+    "pricing-override-review",
+    "tax-rule-conflicts",
+    "currency-rounding-exceptions"
+  ]
+}

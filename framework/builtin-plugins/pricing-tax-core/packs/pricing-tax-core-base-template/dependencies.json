@@ -1,0 +1,18 @@
+{
+  "plugin": "pricing-tax-core",
+  "requiredPlugins": [
+    "auth-core",
+    "org-tenant-core",
+    "role-policy-core",
+    "audit-core",
+    "workflow-core",
+    "party-relationships-core",
+    "product-catalog-core"
+  ],
+  "requiredCapabilities": [
+    "ui.register.admin",
+    "api.rest.mount",
+    "data.write.pricing",
+    "events.publish.pricing"
+  ]
+}

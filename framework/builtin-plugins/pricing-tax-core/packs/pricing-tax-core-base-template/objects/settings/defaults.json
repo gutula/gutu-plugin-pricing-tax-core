@@ -1,0 +1,9 @@
+{
+  "workspace": "business-foundations",
+  "route": "/admin/business/pricing",
+  "pageTitle": "Pricing & Tax Control Room",
+  "defaultRecordState": "draft",
+  "defaultApprovalState": "pending",
+  "defaultPostingState": "unposted",
+  "defaultFulfillmentState": "none"
+}
