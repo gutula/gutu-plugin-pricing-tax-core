@@ -4,7 +4,7 @@
 
 ## Shipped Now
 
-- Exports 3 governed actions: `pricing.price-lists.publish`, `pricing.tax-rules.publish`, `pricing.policies.evaluate`.
+- Exports 7 governed actions: `pricing.price-lists.publish`, `pricing.tax-rules.publish`, `pricing.policies.evaluate`, `pricing.price-lists.hold`, `pricing.price-lists.release`, `pricing.price-lists.amend`, `pricing.price-lists.reverse`.
 - Owns 3 resource contracts: `pricing.price-lists`, `pricing.tax-rules`, `pricing.commercial-policies`.
 - Publishes 2 job definitions with explicit queue and retry policy metadata.
 - Publishes 1 workflow definition with state-machine descriptions and mandatory steps.
@@ -18,7 +18,7 @@
 
 ## Current Gaps
 
-- Repo-local documentation verification entrypoints were missing before this pass and need to stay green as the repo evolves.
+- No additional gaps were identified beyond the plugin’s stated non-goals.
 
 ## Recommended Next
 

@@ -26,7 +26,7 @@ Shared price lists, discount rules, tax determination, withholding rules, and co
 
 Maintains shared pricing, discount, tax, and commercial-policy rules so order, billing, and procurement flows evaluate policy from one governed source.
 
-- Exports 3 governed actions: `pricing.price-lists.publish`, `pricing.tax-rules.publish`, `pricing.policies.evaluate`.
+- Exports 7 governed actions: `pricing.price-lists.publish`, `pricing.tax-rules.publish`, `pricing.policies.evaluate`, `pricing.price-lists.hold`, `pricing.price-lists.release`, `pricing.price-lists.amend`, `pricing.price-lists.reverse`.
 - Owns 3 resource contracts: `pricing.price-lists`, `pricing.tax-rules`, `pricing.commercial-policies`.
 - Publishes 2 job definitions with explicit queue and retry policy metadata.
 - Publishes 1 workflow definition with state-machine descriptions and mandatory steps.
@@ -71,7 +71,7 @@ This tier is justified because unit coverage exists, contract coverage exists, i
 
 | Surface | Count | Details |
 | --- | --- | --- |
-| Actions | 3 | `pricing.price-lists.publish`, `pricing.tax-rules.publish`, `pricing.policies.evaluate` |
+| Actions | 7 | `pricing.price-lists.publish`, `pricing.tax-rules.publish`, `pricing.policies.evaluate`, `pricing.price-lists.hold`, `pricing.price-lists.release`, `pricing.price-lists.amend`, `pricing.price-lists.reverse` |
 | Resources | 3 | `pricing.price-lists`, `pricing.tax-rules`, `pricing.commercial-policies` |
 | Jobs | 2 | `pricing.projections.refresh`, `pricing.reconciliation.run` |
 | Workflows | 1 | `pricing-policy-lifecycle` |
@@ -96,10 +96,10 @@ bun run docs:check
 ```
 
 ```ts
-import { manifest, createPrimaryRecordAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/pricing-tax-core";
+import { manifest, publishPriceListAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/pricing-tax-core";
 
 console.log(manifest.id);
-console.log(createPrimaryRecordAction.id);
+console.log(publishPriceListAction.id);
 console.log(BusinessPrimaryResource.id);
 ```
 

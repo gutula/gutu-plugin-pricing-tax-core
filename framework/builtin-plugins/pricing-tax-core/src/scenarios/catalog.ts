@@ -6,7 +6,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "pricing.price-lists.publish",
       "pricing.tax-rules.publish",
-      "pricing.policies.evaluate"
+      "pricing.policies.evaluate",
+      "pricing.price-lists.hold",
+      "pricing.price-lists.release",
+      "pricing.price-lists.amend",
+      "pricing.price-lists.reverse"
     ],
     "downstreamTargets": {
       "create": [],
@@ -25,7 +29,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "pricing.price-lists.publish",
       "pricing.tax-rules.publish",
-      "pricing.policies.evaluate"
+      "pricing.policies.evaluate",
+      "pricing.price-lists.hold",
+      "pricing.price-lists.release",
+      "pricing.price-lists.amend",
+      "pricing.price-lists.reverse"
     ],
     "downstreamTargets": {
       "create": [],
@@ -44,7 +52,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "pricing.price-lists.publish",
       "pricing.tax-rules.publish",
-      "pricing.policies.evaluate"
+      "pricing.policies.evaluate",
+      "pricing.price-lists.hold",
+      "pricing.price-lists.release",
+      "pricing.price-lists.amend",
+      "pricing.price-lists.reverse"
     ],
     "downstreamTargets": {
       "create": [],

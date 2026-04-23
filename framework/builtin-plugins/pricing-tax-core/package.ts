@@ -85,7 +85,11 @@ export default definePackage({
   "publicCommands": [
     "pricing.price-lists.publish",
     "pricing.tax-rules.publish",
-    "pricing.policies.evaluate"
+    "pricing.policies.evaluate",
+    "pricing.price-lists.hold",
+    "pricing.price-lists.release",
+    "pricing.price-lists.amend",
+    "pricing.price-lists.reverse"
   ],
   "publicQueries": [
     "pricing.quote-context",

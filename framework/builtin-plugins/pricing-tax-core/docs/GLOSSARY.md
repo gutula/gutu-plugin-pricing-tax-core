@@ -9,6 +9,10 @@
 | pricing.price-lists.publish | Publish Price List |
 | pricing.tax-rules.publish | Publish Tax Rules |
 | pricing.policies.evaluate | Evaluate Commercial Policy |
+| pricing.price-lists.hold | Place Record On Hold |
+| pricing.price-lists.release | Release Record Hold |
+| pricing.price-lists.amend | Amend Record |
+| pricing.price-lists.reverse | Reverse Record |
 | pricing.projections.refresh | Job definition queued on `pricing-projections`. |
 | pricing.reconciliation.run | Job definition queued on `pricing-reconciliation`. |
 | pricing-policy-lifecycle | Draft, approve, publish, supersede, and retire pricing and tax policy changes. |

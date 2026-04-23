@@ -71,6 +71,10 @@ Maintains shared pricing, discount, tax, and commercial-policy rules so order, b
 | Action | `pricing.price-lists.publish` | Permission: `pricing.price-lists.write` | Publish Price List<br>Idempotent<br>Audited |
 | Action | `pricing.tax-rules.publish` | Permission: `pricing.tax-rules.write` | Publish Tax Rules<br>Non-idempotent<br>Audited |
 | Action | `pricing.policies.evaluate` | Permission: `pricing.commercial-policies.read` | Evaluate Commercial Policy<br>Non-idempotent<br>Audited |
+| Action | `pricing.price-lists.hold` | Permission: `pricing.price-lists.write` | Place Record On Hold<br>Non-idempotent<br>Audited |
+| Action | `pricing.price-lists.release` | Permission: `pricing.price-lists.write` | Release Record Hold<br>Non-idempotent<br>Audited |
+| Action | `pricing.price-lists.amend` | Permission: `pricing.price-lists.write` | Amend Record<br>Non-idempotent<br>Audited |
+| Action | `pricing.price-lists.reverse` | Permission: `pricing.price-lists.write` | Reverse Record<br>Non-idempotent<br>Audited |
 | Resource | `pricing.price-lists` | Portal disabled | Versioned price lists, discount rules, and commercial overrides.<br>Purpose: Keep commercial demand and procurement policy evaluation consistent across the suite.<br>Admin auto-CRUD enabled<br>Fields: `title`, `recordState`, `approvalState`, `postingState`, `fulfillmentState`, `updatedAt` |
 | Resource | `pricing.tax-rules` | Portal disabled | Tax categories, jurisdiction rules, and withholding configurations.<br>Purpose: Provide one shared tax-determination layer instead of burying fiscal logic in every plugin.<br>Admin auto-CRUD enabled<br>Fields: `label`, `status`, `requestedAction`, `updatedAt` |
 | Resource | `pricing.commercial-policies` | Portal disabled | Rounding, precedence, payment terms, and segment-specific pricing policies.<br>Purpose: Make commercial decision logic visible, configurable, and packable.<br>Admin auto-CRUD enabled<br>Fields: `severity`, `status`, `reasonCode`, `updatedAt` |
@@ -156,11 +160,11 @@ stateDiagram-v2
 ### 1. Host wiring
 
 ```ts
-import { manifest, createPrimaryRecordAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/pricing-tax-core";
+import { manifest, publishPriceListAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/pricing-tax-core";
 
 export const pluginSurface = {
   manifest,
-  createPrimaryRecordAction,
+  publishPriceListAction,
   BusinessPrimaryResource,
   jobDefinitions,
   workflowDefinitions,
@@ -174,10 +178,10 @@ Use this pattern when your host needs to register the plugin’s declared export
 ### 2. Action-first orchestration
 
 ```ts
-import { manifest, createPrimaryRecordAction } from "@plugins/pricing-tax-core";
+import { manifest, publishPriceListAction } from "@plugins/pricing-tax-core";
 
 console.log("plugin", manifest.id);
-console.log("action", createPrimaryRecordAction.id);
+console.log("action", publishPriceListAction.id);
 ```
 
 - Prefer action IDs as the stable integration boundary.
@@ -219,7 +223,7 @@ console.log("action", createPrimaryRecordAction.id);
 
 ### Current truth
 
-- Exports 3 governed actions: `pricing.price-lists.publish`, `pricing.tax-rules.publish`, `pricing.policies.evaluate`.
+- Exports 7 governed actions: `pricing.price-lists.publish`, `pricing.tax-rules.publish`, `pricing.policies.evaluate`, `pricing.price-lists.hold`, `pricing.price-lists.release`, `pricing.price-lists.amend`, `pricing.price-lists.reverse`.
 - Owns 3 resource contracts: `pricing.price-lists`, `pricing.tax-rules`, `pricing.commercial-policies`.
 - Publishes 2 job definitions with explicit queue and retry policy metadata.
 - Publishes 1 workflow definition with state-machine descriptions and mandatory steps.
@@ -233,7 +237,7 @@ console.log("action", createPrimaryRecordAction.id);
 
 ### Current gaps
 
-- Repo-local documentation verification entrypoints were missing before this pass and need to stay green as the repo evolves.
+- No extra gaps were discovered beyond the plugin’s declared boundaries.
 
 ### Recommended next
 
