@@ -13,6 +13,10 @@ export const hostPlugin: HostPlugin = {
   routes: [
     { mountPath: "/pricing-rules", router: pricingRuleRoutes }
   ],
+  resources: [
+    "pricing-tax.price",
+    "pricing-tax.tax-rule",
+  ],
 };
 
 // Re-export the lib API so other plugins can `import` from
